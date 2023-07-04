@@ -70,6 +70,7 @@ def main():
     # Get info for the inputs
     input_raster = inputs.get('input_raster')
     name = input_raster["name"]
+    category = input_raster['categories']
     input_raster_path = inputs['input_raster']['components'][0]['path']
     logging.info(f'Input raster is {name} id: {input_raster["id"]}')
 
@@ -78,7 +79,7 @@ def main():
 
     # Create the output raster
     logging.debug('Creating the output raster')
-    out_name = name + '_resampled'
+    out_name = name + f'_resampled_{str(ratio)}m'
     output_raster_path = WORKING_DIR / out_name
     logging.info(f'Output path: {output_raster_path}')
 
@@ -98,6 +99,7 @@ def main():
                 "type": "raster",
                 "format": "tif",
                 "name": out_name,
+                "categories": category,
                 "components": [
                     {
                         "name": "raster",
