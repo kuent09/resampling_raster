@@ -79,8 +79,9 @@ def main():
 
     # Create the output raster
     logging.debug('Creating the output raster')
-    out_name = name + f'_resampled_{str(ratio)}m.tif'
-    output_raster_path = WORKING_DIR / out_name
+    out_name = name + f'_resampled_{str(ratio)}m'
+    out_name_ext = out_name + '.tif'
+    output_raster_path = WORKING_DIR / out_name_ext
     logging.info(f'Output path: {output_raster_path}')
 
     # Resampling raster
