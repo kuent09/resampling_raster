@@ -2,7 +2,7 @@ import json
 import logging
 import sys
 import os
-import Path
+from pathlib import Path
 
 import rasterio
 from rasterio.warp import Resampling
