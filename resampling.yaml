@@ -13,8 +13,8 @@ inputs:
     display-name: Raster file
     description: Raster file to resample
     kind: dataset
-    mission: all
     schema:
+      mission: all
       type: raster
     required: true
 parameters:
