@@ -1,0 +1,34 @@
+---
+spec-version: v1.0
+name: proserv/resampling
+version: 1.0.0
+display-name: Resampling a raster
+description: Resampling a raster
+docker-image: registry-external.admin-tool.delair-stack.com/kuent/resampling
+instance-type: small
+volume-size: 50
+groups: [Free analytics]
+inputs:
+  - name: input_raster
+    display-name: Raster file
+    description: Raster file to resample
+    kind: dataset
+    mission: all
+    schema:
+      type: raster
+    required: true
+parameters:
+  - name: pixel_per_meter
+    display-name: Size of pixel to resample
+    description: Pixel ratio,  pixel_in / pixel_out.
+    schema:
+      type: number
+    required: true
+deliverables:
+  - name: output_raster
+    display-name: Raster resampled
+    description: Raster resampled
+    kind: dataset
+    schema:
+      type: raster
+    required: true
